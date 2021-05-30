@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+</head>
+<body>
+    <script>
+        var tDegC = prompt('Температура по Цельсию'), 
+            tDegF,
+            errorMessage = 'Введенное значение неверно, введите число!';
+
+        if(!tDegC){
+            alert(errorMessage);
+        } else {
+            tDegF = (9/5) * tDegC + 32;
+            
+            if(!tDegF){
+                alert(errorMessage);
+            } else {
+                alert('Результат по Фаренгейту: ' + tDegF);
+            }
+        }
+    </script>
+</body>
+</html>
