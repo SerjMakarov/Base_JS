@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange of values</title>
+</head>
+<body>
+    <script>
+        var a = 100, b = 300;
+
+        console.log('Данные на входе:' + ' a:' + a + ' b:' + b);
+
+        a += a += b = a;
+
+        console.log('Данные на выходе:' + ' a:' + a + ' b:' + b);
+    </script>
+</body>
+</html>
