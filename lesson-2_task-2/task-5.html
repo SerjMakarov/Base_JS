@@ -8,11 +8,12 @@
 </head>
 <body>
     <script>     
-        console.log(toAdd(5, 3));
-        console.log(toSubtract(5, 3));
-        console.log(multiplication(5, 3));
-        console.log(division(5, 3));
+        console.log(toAdd(5, 6));
+        console.log(toSubtract(5, 6));
+        console.log(multiplication(5, 6));
+        console.log(division(0, 0));
 
+        
         function toAdd(a = 0, b = 0){
             var result = a + b;
             return result;
@@ -29,7 +30,12 @@
         }
 
         function division(a = 0, b = 0){
-            var result = a / b;
+            var result; 
+            if(b === 0){
+                result = 'На ноль делить нельзя';
+                return result;
+            }
+            result = a / b;
             return result;
         }
     </script>
