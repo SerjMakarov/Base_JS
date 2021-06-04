@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(mathOperation(9, 2, '+'));
+
+        function mathOperation(a = 0, b = 0, operation){
+            switch(operation){
+                case '+':
+                    return toAdd(a, b);
+                    break;
+                case '-':
+                    return toSubtract(a, b);
+                    break;
+                case '*':
+                    return multiplication(a, b);
+                    break; 
+                case '/':
+                    return division(a, b);
+                    break;
+                default:
+                    alert('Введите выражение');
+            }
+        }
+
+        function toAdd(a = 0, b = 0){
+            var result = a + b;
+            return result;
+        }
+
+        function toSubtract(a = 0, b = 0){
+            var result = a - b;
+            return result;
+        }
+
+        function multiplication(a = 0, b = 0){
+            var result = a * b;
+            return result;
+        }
+
+        function division(a = 0, b = 0){
+            var result; 
+            if(b === 0){
+                result = 'На ноль делить нельзя';
+                return result;
+            }
+            result = a / b;
+            return result;
+        }
+    </script>
+</body>
+</html>
