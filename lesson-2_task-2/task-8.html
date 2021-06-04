@@ -8,17 +8,15 @@
 </head>
 <body>
     <script>
-        var a = -20, b = -30;
+        console.log(power(3,3));
 
-        if(a > 0 && b > 0){
-            a -= b
-        } else if (a < 0 && b < 0){
-            a *= b
-        } else if (a < 0 && b > 0){
-            a += b
+        function power(val, pow){
+            if(pow == 1){
+                return val;
+            } else {
+                return val * power(val, pow - 1) 
+            }
         }
-
-        console.log(a);
     </script>
 </body>
 </html>

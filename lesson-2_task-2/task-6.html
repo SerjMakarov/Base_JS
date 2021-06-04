@@ -8,16 +8,7 @@
 </head>
 <body>
     <script>
-        var inputValues = prompt('Введите выражение');
-
-        arInputValues = inputValues.split(/[\\+\\-\\*\\/]/);
-        arOperation = inputValues.split('');
-        operation = arOperation.includes(/[\\+\\-\\*\\/]/);
-
-        console.log(arInputValues)
-        console.log(operation)
-
-        alert(mathOperation(+arInputValues[0], +arInputValues[1], inputValues[1]));
+        console.log(mathOperation(9, 2, '+'));
 
         function mathOperation(a = 0, b = 0, operation){
             switch(operation){
@@ -29,7 +20,7 @@
                     break;
                 case '*':
                     return multiplication(a, b);
-                    break;
+                    break; 
                 case '/':
                     return division(a, b);
                     break;
