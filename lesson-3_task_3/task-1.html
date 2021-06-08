@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i = 2, b = 200, a = 1, j = 1;
+
+        //простое число, число которое делится только на себя и на 1;
+
+        while(i <= b){
+            if(a == 1){ //проверка есть ли остаток от единицы
+                e = i % a;  // 0 
+            } else if(i == a){ //проверка есть ли остаток от самого себя
+                d = i % a; // 0
+            } else { //проверка есть ли остаток от других чисел
+                j = i % a; //если занчение ноль, то переходим к проверке условия на 22 строке
+                if(j == 0) a = i; // если true, то это признак того, что число делится на числа кроме 1 и самого себя, а значит оно сложное. 
+            }
+
+            if(a == i){ 
+                if(j != 0) console.log(i);
+                i++;
+                a = 1;
+            } else {
+                a++;
+            }
+        }
+    </script>
+</body>
+</html>
