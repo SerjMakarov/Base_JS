@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var basket = {
+            arProducts: [
+                            ['Чайник', 1000, 'руб'],
+                            ['Пылесос', 15000, 'руб'],
+                            ['Мультиварка', 5000, 'руб'],
+                            ['Весы', 850, 'руб'],
+                            ['Блендер', 5000, 'руб'],
+                            ['Плита', 25000, 'руб'],
+                            ['Холодильник', 30000, 'руб'],
+                        ]
+        };
+
+        //Если в массив добавлять товары, то общая стоимость будет пересчитываться.
+
+        countBasketPrice();
+
+        function countBasketPrice(){
+            for(i = 0, j = 1, price = 0; basket.arProducts.length > i; i++){
+                price = basket.arProducts[i][j] + price;          
+            }
+            currency = basket.arProducts[0][2];
+            console.log('Общая стоимость корзины: ' + price + ' ' + currency);
+        }
+    </script>
+</body>
+</html>
