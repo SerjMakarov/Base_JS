@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        createObject(253);
+
+        function createObject(initNumber, arProperties = ['units', 'ten', 'hundreds']){
+            if(initNumber <= 999 && initNumber >= 0){ // условие определяющее промежуток от 0 до 999
+                //привожу тип данных к строке, чтобы можно было выбрать разряд указав index.
+                stringNum = initNumber.toFixed();
+                num = {}; // создаю объект
+                for(i = 0; stringNum.length > i; i++){ //обхожу циклом полученные данные, присваиваю свойства  
+                    num[arProperties[i]] = stringNum[i];
+                }
+            } else { // если условие не выполнилось тогда создаю пустой объект
+                message = 'Функция createObject принимает значения только 0 до 999 ';
+                console.log(message);
+                num = {};
+            }
+            console.log(num); //вывод результата в консоль браузера
+        }
+    </script>
+</body>
+</html>
