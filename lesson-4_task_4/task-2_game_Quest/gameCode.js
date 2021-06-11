@@ -1,12 +1,13 @@
 //После игры необходимо спросить номер вопроса. 
 //По номеру вопроса нужно вывести текст вопроса и текст выбранного ответа
 
-var event, ok, arQuestion = arAnswer = [];
+var event, ok, arAnswer = [null], err = true;
 
 //var answers = [];
 callQuestion(works.a00, works.a1, works.a2);
 switch (event) {
-    case 1: // Первое действие  - если в первом окне ввели 1 то открываем серию окон - окно 2
+    case step = 1: // Первое действие  - если в первом окне ввели 1 то открываем серию окон - окно 2
+        console.log(step);
         callQuestion(works.b00, works.b1, works.b2);
         switch (event) {
             case 1: // Второе действие, если во 2 окне ввели 1 то переходим на 4 окно
@@ -21,7 +22,7 @@ switch (event) {
                 alert('Ошибка');
         }
         break;
-    case 2: // Первое действие    Если в 1 окне ввели 2 то переходим к 3 окну
+    case step = 2: // Первое действие    Если в 1 окне ввели 2 то переходим к 3 окну
         callQuestion(works.c00, works.c1, works.c2);
         switch (event) {
             case 1: // Второе действие
@@ -40,9 +41,12 @@ switch (event) {
         break;
     default:
         alert('Ошибка');
+        err = false;
+        break;
 }
-getResponse();
-alert('Спасибо за игру');
+if(err){
+    getResponse();
+}
 
 //------------------------------------------
 function isAnswer(q, event) {
@@ -61,11 +65,11 @@ function callQuestion(answer, optionA, optionB){
     do {//Выводим первый вопрос
         ok = false;
         event = +prompt(answer + optionA + optionB + '-1 - Выход из игры'); //получаю ответ от игрока
-        arAnswer.push([answer]);
-        // arQuestion.push([event, optionA], [event, optionB]);
-        console.log(arAnswer);
-        // console.log(arQuestion);
-
+        if(event === 1){
+            arAnswer.push([answer, optionA]);
+        } else {
+            arAnswer.push([answer, optionB]);
+        }  
         if (event == -1) {
             break;
         }
@@ -76,7 +80,11 @@ function callQuestion(answer, optionA, optionB){
 }
 
 function getResponse(){
-    response = +prompt('Укажите номер вопроса, чтобы узнать как вы ответили');
-    alert('Ваши ответы на вопросы \n' + arData[response]);
+    response = +prompt('Укажите номер шага, чтобы узнать как вы ответили');
+    if(!response){
+        alert('Спасибо за игру');
+    } else {
+        alert('Ваш вопрос:\n\n' + arAnswer[response][0] + '\n\n'  + 'Ваш ответ:\n\n' + arAnswer[response][1] );
+    }
 }
 
