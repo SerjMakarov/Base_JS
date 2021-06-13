@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 950px;
+}
+
+.box {
+    display: flex;   
+    background: rgb(176, 212, 221);
+    border: 2px solid rgb(43, 40, 40);
+    position: relative;
+}
+
+.cell {
+    height: 100px;
+    width: 100px;
+    background: rgb(43, 40, 40);
+}
+
+.row-1 .cell:nth-child(even) {
+    background: rgb(255, 255, 255);
+}
+
+.row-2 .cell:nth-child(odd) {
+    background: rgb(255, 255, 255);
+}
+
+.row-3 .cell:nth-child(even) {
+    background: rgb(255, 255, 255);
+}
+
+.row-4 .cell:nth-child(odd) {
+    background: rgb(255, 255, 255);
+}
+
+.row-5 .cell:nth-child(even) {
+    background: rgb(255, 255, 255);
+}
+
+.row-6 .cell:nth-child(odd) {
+    background: rgb(255, 255, 255);
+}
+
+.row-7 .cell:nth-child(even) {
+    background: rgb(255, 255, 255);
+}
+
+.row-8 .cell:nth-child(odd) {
+    background: rgb(255, 255, 255);
+}
+
+.str-top {
+    position: absolute;
+    top: -30px;
+    padding: 0 42px;
+}
+
+.str-bottom {
+    position: absolute;
+    top: -30px;
+    padding: 0 42px;
+}
+
+.number {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.number div {
+    text-align: center;
+    padding: 41px 0;
+    width:  50px;
+}
