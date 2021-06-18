@@ -60,7 +60,7 @@ body {
 }
 
 .btn-buy {
-    margin-top: 20px;
+    margin-top: 91px;
     padding: 15px 40px;
     text-transform: uppercase;
 }
@@ -75,3 +75,6 @@ body {
     border: 1px solid rgb(82, 107, 114);
 }
 
+.all-price {
+    margin: 20px 0 20px 5px;
+}
