@@ -116,16 +116,27 @@ function move() {
     // Определяем новую точку
     if (direction == 'x-') {
         new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (coord_x - 1))[0];
+        if(coord_x == 0){
+            new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (coord_x + 19))[0];
+        }
     }
     else if (direction == 'x+') {
         new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (coord_x + 1))[0];
+        if(coord_x == 19){
+            new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (coord_x - 19))[0];
+        }
     }
     else if (direction == 'y+') {
         new_unit = document.getElementsByClassName('cell-' + (coord_y - 1) + '-' + (coord_x))[0];
-        console.log(new_unit);
+        if(coord_y == 0){
+            new_unit = document.getElementsByClassName('cell-' + (coord_y + 19) + '-' + (coord_x))[0];
+        }
     }
     else if (direction == 'y-') {
         new_unit = document.getElementsByClassName('cell-' + (coord_y + 1) + '-' + (coord_x))[0];
+        if(coord_y == 19){
+            new_unit = document.getElementsByClassName('cell-' + (coord_y - 19) + '-' + (coord_x))[0];
+        }
     }
 
     // Проверки
@@ -150,9 +161,9 @@ function move() {
         haveWall(new_unit);
 
     }
-    else {
-        finishTheGame();
-    }
+    // else {
+    //     finishTheGame();
+    // }
 }
 
 /**
@@ -194,7 +205,7 @@ function haveWall(unit) {
 
     var unit_classes = unit.getAttribute('class').split(' ');
 
-    // Если еда
+    // Если стена то проиграли
     if (unit_classes.includes('wall-unit')) {
         finishTheGame();
     }
@@ -306,7 +317,7 @@ function finishTheGame() {
     gameIsRunning = false;
     clearInterval(snake_timer);
     clearInterval(wallTimer)
-    alert('Вы проиграли! Ваш результат: ' + score.toString());
+    alert('Вы проиграли!');
 }
 
 /**
